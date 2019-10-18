@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package pb;
+
+message StatusRequest {
+  string check = 1;
+}
+
+message Status {
+  string health = 1;
+  int32 code = 2;
+}
+
+service StatusService {
+  rpc CheckStatus (StatusRequest) returns (Status) {}
+}
